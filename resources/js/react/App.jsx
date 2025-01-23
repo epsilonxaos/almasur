@@ -1,47 +1,65 @@
-import { useReducer } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from 'framer-motion'
 
-import ScrollToTop from "./components/ScrollToTop";
-import PageTransition from "./components/PageTransition";
-import Loading from "./components/Loading";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import PageNotFound from "./pages/PageNotFound";
-import { useLocation } from "react-router-dom";
+import { useEffect, useReducer } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
+
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Loading from './components/Loading'
+import PageTransition from './components/PageTransition'
+import ScrollToTop from './components/ScrollToTop'
+import Home from './pages/Home'
+import PageNotFound from './pages/PageNotFound'
+import Thanks from './pages/Thanks'
 
 const initialArgs = {
-    loading: true,
-};
+	loading: true,
+}
 
-const reducer = (prev, next) => ({ ...prev, ...next });
+const reducer = (prev, next) => ({ ...prev, ...next })
 
 export default function App() {
-    const location = useLocation();
-    const [state, dispatch] = useReducer(reducer, initialArgs);
+	const location = useLocation()
+	const [state, dispatch] = useReducer(reducer, initialArgs)
 
-    if (state.loading) return <Loading />;
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			dispatch({ loading: false })
+		}, 1500)
+		return () => clearTimeout(timer)
+	}, [])
 
-    return (
-        <>
-            <Header />
-            <AnimatePresence mode="wait">
-                <ScrollToTop />
+	if (state.loading) return <Loading />
 
-                <Routes location={location} key={location.pathname}>
-                    <Route
-                        index
-                        element={
-                            <PageTransition>
-                                <Home />
-                            </PageTransition>
-                        }
-                    />
+	return (
+		<>
+			{/* <Header /> */}
+			<AnimatePresence mode='wait'>
+				<ScrollToTop />
 
-                    <Route path="*" element={<PageNotFound />} />
-                </Routes>
-            </AnimatePresence>
-            <Footer />
-        </>
-    );
+				<Routes
+					location={location}
+					key={location.pathname}>
+					<Route
+						path='/'
+						element={<Home />}
+					/>
+					<Route
+						path='/gracias'
+						element={
+							<PageTransition>
+								<Thanks />
+							</PageTransition>
+						}
+					/>
+
+					<Route
+						path='*'
+						element={<PageNotFound />}
+					/>
+				</Routes>
+			</AnimatePresence>
+			{/* <Footer /> */}
+		</>
+	)
 }
