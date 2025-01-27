@@ -1,6 +1,9 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge';
 
-import { ReactNode } from 'react'
+
+
+import { ReactNode } from 'react';
+
 
 export type TTexts = {
 	children: ReactNode
@@ -17,13 +20,13 @@ const Text = (opt: TTexts) => {
 export const TextTitle = (opt: TTexts) => {
 	const { children, className } = opt
 
-	return <article className={twMerge('text-sm font-medium sm:text-lg', className)}>{children}</article>
+	return <article className={twMerge('text-sm font-light sm:text-lg', className)}>{children}</article>
 }
 // Base: 10 => 12 (casi no hay este cambio, se mantiene en 12)
 export const TextContent = (opt: TTexts) => {
 	const { children, className } = opt
 
-	return <article className={twMerge('font-medium sm:text-xs', className)}>{children}</article>
+	return <article className={twMerge('text-xs font-medium sm:text-xs', className)}>{children}</article>
 }
 
 // Se mantiene 10 a 8

@@ -17,13 +17,14 @@ module.exports = {
                 main_b: "#FFFFFF",
                 main_n: "#000000",
                 bonanza: " #FD6B21", //#FF6B00
-                arena: " #FFF0E6", //#FFF6F1 //cotizador
+                arena_2: " #FFF0E6", //#FFF6F1 //cotizador
                 cima: " #B8BC2C", //#B8BE14
-                naranja: " #F8F8E8", // #FFF0E6 //Ofrece
+                arena_1: " #F8F8E8", // #FFF0E6 //Ofrece
                 magna: " #3AA8DC", //#32A7DE
                 ventura: " #D30D5A", //#D50057
                 pacifico: " #F25497", //#F45197
 
+                cnts: "#7B6756",
                 naranja: " #F7A9CB",
                 naranja: " #FEEEF5",
             },
@@ -35,7 +36,7 @@ module.exports = {
             maxWidth: {
                 app: "1520px",
                 section: "1440px",
-                "section-content": "1200px",
+                "section-content": "1250px",
                 // section: "1320px",
                 // "section-content": "1320px",
             },
