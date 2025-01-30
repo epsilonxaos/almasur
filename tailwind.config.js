@@ -16,17 +16,18 @@ module.exports = {
             colors: {
                 main_b: "#FFFFFF",
                 main_n: "#000000",
-                bonanza: " #FD6B21", //#FF6B00
-                arena_2: " #FFF0E6", //#FFF6F1 //cotizador
-                cima: " #B8BC2C", //#B8BE14
-                arena_1: " #F8F8E8", // #FFF0E6 //Ofrece
-                magna: " #3AA8DC", //#32A7DE
-                ventura: " #D30D5A", //#D50057
-                pacifico: " #F25497", //#F45197
-
-                cnts: "#7B6756",
-                naranja: " #F7A9CB",
-                naranja: " #FEEEF5",
+                cafe_tenue: "#7B6756",
+                arena_1: "#F8F8E8", // #FFF0E6 //Ofrece
+                arena_2: "#FFF0E6", //#FFF6F1 //cotizador
+                arena_3: "#F6F5F4", //Botones, control modelos
+                bonanza: "#FD6B21", //#FF6B00
+                cima: "#B8BC2C", //#B8BE14
+                magna: "#3AA8DC", //#32A7DE
+                ventura: "#D30D5A", //#D50057
+                pacifico: "#F25497", //#F45197
+                //Estaban en figma, pero no se usaron
+                naranja: "#F7A9CB",
+                naranja: "#FEEEF5",
             },
             fontFamily: {
                 ibmPlex: ["IBM Plex Mono", "sans-serif"],
