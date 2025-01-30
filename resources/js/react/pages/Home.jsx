@@ -1,18 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-
-
-import Main_screen from '../components/Containers/Main-screen.';
-import MD01_BannerInicial from '../components/Containers/modules/md01-inicial';
-import MD02_UbicacionMerida from '../components/Containers/modules/md02-ubimerida';
-import MD03_SoloImagen from '../components/Containers/modules/md03-soloimagen';
-import MD04_Almasur from '../components/Containers/modules/md04-almasur';
-import MD05_SoloImagenSillones from '../components/Containers/modules/md05-soloimgSillones';
+import Main_screen from '../components/Containers/Main-screen.'
+import MD01_BannerInicial from '../components/Containers/modules/md01-inicial'
+import MD02_UbicacionMerida from '../components/Containers/modules/md02-ubimerida'
+import MD03_SoloImagen from '../components/Containers/modules/md03-soloimagen'
+import MD04_Almasur from '../components/Containers/modules/md04-almasur'
+import MD05_SoloImagenSillones from '../components/Containers/modules/md05-soloimgSillones'
 import MD06_MapaAlmasur from '../components/Containers/modules/md06-mapaAlmasur'
 import MD07_ModelosCasa from '../components/Containers/modules/md07-modelos'
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-
+import MD08_Cotizador from '../components/Containers/modules/md08-cotizador'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 export default function Home() {
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
@@ -47,11 +45,10 @@ export default function Home() {
 				<MD04_Almasur dimScreen={dimsScreen} />
 				<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
 				<MD06_MapaAlmasur />
-
-				{/* MODELOS DE CASA */}
-				<MD07_ModelosCasa isMobile={dimsScreen.isMobile}/>
-
+				<MD07_ModelosCasa isMobile={dimsScreen.isMobile} />
 				{/* COTIZADOR */}
+				<MD08_Cotizador />
+
 				{/* CORREO */}
 				<Footer />
 			</Main_screen>

@@ -25,9 +25,10 @@ export const TextTitle = (opt: TTexts) => {
 }
 // Base: 10 => 12 (casi no hay este cambio, se mantiene en 12)
 export const TextContent = (opt: TTexts) => {
-	const { children, className } = opt
+	const { children, className, color } = opt
+	const textColor = color ? `${colorVariants[color].text}` : ''
 
-	return <article className={twMerge('text-xs font-medium sm:text-xs', className)}>{children}</article>
+	return <article className={twMerge('text-xs font-medium sm:text-xs', className, textColor)}>{children}</article>
 }
 
 // Se mantiene 10 a 8
