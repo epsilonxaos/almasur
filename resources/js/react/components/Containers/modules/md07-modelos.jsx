@@ -153,7 +153,8 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 		<Section
 			classContainer=''
 			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
-			<div className='dev-cnt w-full px-2'>
+			{/* Contenedor para controles del carrusel */}
+			<div className=' w-full px-2'>
 				<TextTitle className='font-geo-300 px-8 py-10 sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
@@ -194,10 +195,11 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					</span>
 				</TextSmallContent>
 			</div>
-
+			
+			{/* Carrusel */}
 			<div
 				ref={carruselRef}
-				className='dev-cnt flex w-full flex-col gap-16 overflow-x-hidden sm:flex-row'
+				className=' flex w-full flex-col gap-16 overflow-x-hidden sm:flex-row'
 				style={{ scrollSnapType: 'x mandatory' }}>
 				{modelos.map((modelo, idx) => {
 					return (
@@ -205,7 +207,8 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 							key={idx}
 							className='flex min-h-fit w-full flex-wrap items-center justify-center gap-y-4 sm:flex-shrink-0 sm:justify-between'
 							style={{ scrollSnapAlign: 'start' }}>
-							<div className='dev-cnt relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'>
+							{/* Contenedor imagen e isotipo */}
+							<div className=' relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'>
 								<Image
 									alt={`Modelo de casa '${modelo.nombre}' Almasur`}
 									src={modelo.img}
@@ -216,8 +219,9 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 									className={`absolute -top-4 left-[7%] hidden w-[10%] max-w-[85px] sm:flex md:-top-6 lg:-top-8`}
 								/>
 							</div>
-
-							<section className='dev-cnt mx-auto flex max-w-[250px] flex-col items-start gap-4 text-left text-cafe_tenue md:w-[29%] lg:w-[24%]'>
+							
+							{/* Contenedor para los textos */}
+							<section className=' mx-auto flex max-w-[250px] flex-col items-start gap-4 text-left text-cafe_tenue md:w-[29%] lg:w-[24%]'>
 								<TextTitle
 									color={modelo.color}
 									className={`font-geo-700 font-bold`}>
@@ -230,14 +234,14 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 									{modelo.puntos.map((planta, idx) =>
 										Object.entries(planta).map(([key, value]) => (
 											<ul
-												className='grid gap-2'
+												className=' grid gap-1 mb-4'
 												key={idx}>
 												<span>{key}</span>
 												{value.map((p, i) => {
 													return (
 														<li
 															key={i}
-															className='list-inside list-disc'>
+															className='pl-[6px] list-inside list-disc'>
 															{p}
 														</li>
 													)
