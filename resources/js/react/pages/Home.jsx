@@ -9,6 +9,7 @@ import MD05_SoloImagenSillones from '../components/Containers/modules/md05-soloi
 import MD06_MapaAlmasur from '../components/Containers/modules/md06-mapaAlmasur'
 import MD07_ModelosCasa from '../components/Containers/modules/md07-modelos'
 import MD08_Cotizador from '../components/Containers/modules/md08-cotizador'
+import MD09_ContactUs from '../components/Containers/modules/md09-contactUs'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
@@ -50,6 +51,7 @@ export default function Home() {
 				<MD08_Cotizador />
 
 				{/* CORREO */}
+				<MD09_ContactUs />
 				<Footer />
 			</Main_screen>
 		</div>
