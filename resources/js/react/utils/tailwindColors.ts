@@ -7,6 +7,13 @@ export function getTextColorClass(prefix: string, color: string) {
 }
 
 export const colorVariants = {
+	white: {
+		background: 'bg-white',
+		fill: 'fill-white',
+		hover: 'hover:bg-white',
+		text: 'text-white',
+		border: 'border-white',
+	},
 	ventura: {
 		background: 'bg-ventura',
 		fill: 'fill-ventura',

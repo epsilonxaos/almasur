@@ -47,10 +47,7 @@ export default function Home() {
 				<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
 				<MD06_MapaAlmasur />
 				<MD07_ModelosCasa isMobile={dimsScreen.isMobile} />
-				{/* COTIZADOR */}
 				<MD08_Cotizador />
-
-				{/* CORREO */}
 				<MD09_ContactUs isMobile={dimsScreen.isMobile}/>
 				<Footer />
 			</Main_screen>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import Flecha from '../../../../img/cotizador/icon_flecha_abajo.svg'
 import { Image } from './Image'
+import { TextContent } from './Text'
 
 interface SelectProps {
 	options: { value: string; label: string }[]
@@ -34,20 +35,24 @@ const Select = ({ options, value, onChange, placeholder }: SelectProps) => {
 		<div
 			ref={selectRef}
 			className='relative'>
-			{/* <ContenedorOpciones></ContenedorOpciones> */}
 			<div
-				className='flex cursor-pointer items-center justify-between rounded-md border border-gray-300 bg-white p-2'
+				// pb-3 por el contenedor, valor no definido. Podría cambiar
+				className='flex cursor-pointer items-center justify-between pb-3'
 				onClick={() => setIsOpen(!isOpen)}>
-				<span>{selectedOption ? selectedOption.label : placeholder || 'Seleccionar'}</span>
+				<TextContent
+					color='ventura'
+					className='font-geo-700 text-left'>
+					{selectedOption ? selectedOption.label : placeholder || 'Seleccionar'}
+				</TextContent>
 				<Image
-					className='ml-2'
 					src={Flecha}
 					alt='Flecha para las opciones'
 					objectFit='contain'
 				/>
 			</div>
 			{isOpen && (
-				<ul className='absolute z-10 mt-1 w-full rounded-md border border-gray-300 bg-white shadow-lg'>
+				// <ul className='absolute -left-[15px] z-10 mt-2 w-[calc(100%+30px)] rounded-md bg-neutral-50 shadow-lg'>
+				<ul className='absolute z-10 mt-2 w-full rounded-md bg-neutral-50 shadow-lg'>
 					{options.map(option => (
 						<li
 							key={option.value}
