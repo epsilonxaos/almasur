@@ -18,11 +18,10 @@ const MD06_MapaAlmasur = () => {
 				<TextTitle className='font-geo-700 text-cima'>
 					¡<span className='font-bold'>Almasur</span> será el centro de tu vida!
 				</TextTitle>
-				<TextContent className='font-aller-400 text-cafe_tenue'>
-					Tu vida está siempre en movimiento, por eso lo que necesitas es un lugar donde los tuyos vivan felices y{' '}
-					<span className='font-bold'> con todos los servicios al alcance de la mano. </span>
-				</TextContent>
-				<TextContent className='font-aller-400'>
+				<TextContent className='font-aller-400 text-cafe_tenue grid gap-5'>
+					<p>Tu vida está siempre en movimiento, por eso lo que necesitas es un lugar donde los tuyos vivan felices y{' '}
+						<span className='font-bold'> con todos los servicios al alcance de la mano. </span>
+					</p>
 					<ul className='flex flex-wrap gap-3 sm:flex-col'>
 						<ElementosLista icon={comercios}>Comercios</ElementosLista>
 						<ElementosLista icon={hospitales}>Hospitales</ElementosLista>

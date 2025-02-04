@@ -6,7 +6,7 @@ import { Image } from '../../Items/Image'
 import { TextContent } from '../../Items/Text'
 import Section from '../Section'
 
-const MD09_ContactUs = () => {
+const MD09_ContactUs = ({ isMobile }) => {
 	return (
 		<Section
 			classContainer='bg-ventura bg-opacity-10 lg:mt-32'
@@ -19,8 +19,15 @@ const MD09_ContactUs = () => {
 				/>
 				<TextContent
 					color='ventura'
-					className='font-aller-400 md:text-left'>
-					<p>Calle 50A x 61 y 61 - A Fraccionamiento del sur.</p>
+					className='font-aller-400 grid gap-2 md:text-left'>
+					{isMobile ? (
+						<p>Calle 50A x 61 y 61 - A Fraccionamiento del sur.</p>
+					) : (
+						<>
+							<p>Calle 50A x 61 y 61 - A </p>
+							<p>Fraccionamiento del sur.</p>
+						</>
+					)}
 					<p>999 739 4889</p>
 					<p>Términos y condiciones</p>
 					<p>Políticas de privacidad</p>
@@ -39,7 +46,7 @@ const MD09_ContactUs = () => {
 					<InputForm name='ciudad'>Ciudad:</InputForm>
 					<InputForm name='telefono'>Teléfono:</InputForm>
 					<Button
-						className={`${colorVariants['ventura'].background} max-w-[183px]`}
+						className={`${colorVariants['ventura'].background} max-w-[183px] font-geo-400`}
 						type='submit'>
 						Agendar Videollamada
 					</Button>
@@ -57,7 +64,7 @@ const MD09_ContactUs = () => {
 
 const InputForm = ({ name, children }) => (
 	<input
-		className='border-2 border-ventura bg-transparent text-xs font-medium placeholder:text-ventura'
+		className='font-geo-400 border-2 border-ventura bg-transparent text-xs font-medium placeholder:text-ventura'
 		placeholder={children}
 		type='text'
 		name={name}

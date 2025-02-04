@@ -3,7 +3,7 @@ import { TextSmallContent } from './Items/Text'
 const Footer = () => {
 	return (
 		<footer className='w-full bg-pacifico px-4 py-5 text-main_b'>
-			<ul className='mx-auto flex w-full max-w-section-content flex-col items-center justify-between md:flex-row'>
+			<ul className='font-geo-500 mx-auto gap-2 flex w-full max-w-section-content flex-col items-center justify-between md:flex-row'>
 				<TextSmallContent>TERMINOS Y CONDICIONES</TextSmallContent>
 				<TextSmallContent>
 					DISEÑO Y DESARROLLO POR{' '}

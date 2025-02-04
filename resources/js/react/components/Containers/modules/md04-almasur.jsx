@@ -46,7 +46,7 @@ const MD04_Almasur = ({ dimScreen }) => {
 						objectFit='contain'
 					/>
 
-					<TextContent className='flex w-full max-w-[580px] flex-col items-center gap-4'>
+					<TextContent className='flex text-cafe_tenue w-full max-w-[580px] flex-col items-center gap-4'>
 						<p className='font-geo-400 w-full max-w-[471px] px-6 sm:px-0'>
 							Todas las casas vienen con preparación para instalación de aire acondicionado en las habitaciones y el
 							área de comedor. También incluimos:

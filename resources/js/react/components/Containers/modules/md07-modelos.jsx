@@ -155,7 +155,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
 			<div className='w-full px-2'>
-				<TextTitle className='font-geo-300 px-8 py-10 sm:pb-4'>
+				<TextTitle className='font-geo-300 px-8 py-10 sm:pb-4 text-cafe_tenue'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 

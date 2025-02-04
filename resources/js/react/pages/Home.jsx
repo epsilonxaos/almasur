@@ -51,7 +51,7 @@ export default function Home() {
 				<MD08_Cotizador />
 
 				{/* CORREO */}
-				<MD09_ContactUs />
+				<MD09_ContactUs isMobile={dimsScreen.isMobile}/>
 				<Footer />
 			</Main_screen>
 		</div>
