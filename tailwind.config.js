@@ -17,17 +17,16 @@ module.exports = {
                 main_b: "#FFFFFF",
                 main_n: "#000000",
                 cafe_tenue: "#7B6756",
-                arena_1: "#F8F8E8", // #FFF0E6 //Ofrece
-                arena_2: "#FFF0E6", //#FFF6F1 //cotizador
-                arena_3: "#F6F5F4", //Botones, control modelos
-                bonanza: "#FD6B21", //#FF6B00
+                arena_1: "#F8F8E8", // Cima-opacity-10 // Mapa
+                arena_2: "#FFF0E6", // Ofrece
+                arena_3: "#F6F5F4", //Botones, control modelos // Solo Figma =>#FFF6F1 //cotizador
+                bonanza: "#FD6B21", //#FF6B00 // <= Estos Figma
                 cima: "#B8BC2C", //#B8BE14
                 magna: "#3AA8DC", //#32A7DE
                 ventura: "#D30D5A", //#D50057
                 pacifico: "#F25497", //#F45197
-                //Estaban en figma, pero no se usaron
-                naranja: "#F7A9CB",
-                naranja: "#FEEEF5",
+                rosa_tenue: "#F7A9CB", // Drive => monumento-bandera
+                rosa_tenue2: "#FEEEF5", //Drive => pacifico-opacity-10
             },
             fontFamily: {
                 ibmPlex: ["IBM Plex Mono", "sans-serif"],

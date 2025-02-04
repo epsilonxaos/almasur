@@ -9,7 +9,8 @@ import Section from '../Section'
 const MD09_ContactUs = ({ isMobile }) => {
 	return (
 		<Section
-			classContainer='bg-ventura bg-opacity-10 lg:mt-32'
+			classBackground='bg-rosa_tenue2'
+			classContainer='lg:mt-32'
 			className='flex flex-col items-center justify-around gap-y-8 pt-8 sm:flex-wrap sm:px-[14px] sm:pb-0 md:flex-row'>
 			<div className='flex max-w-[300px] flex-col items-center gap-4 md:max-w-[210px]'>
 				<Image

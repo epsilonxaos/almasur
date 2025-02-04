@@ -12,7 +12,7 @@ import Section from '../Section'
 const MD06_MapaAlmasur = () => {
 	return (
 		<Section
-			classContainer='bg-cima bg-opacity-10 '
+			classBackground='bg-arena_1 '
 			className='relative gap-10 md:gap-0 md:px-0 md:pt-0 lg:px-0'>
 			<article className='left-8 grid max-w-80 gap-5 sm:text-left md:absolute md:top-20 lg:top-32 xl:top-48'>
 				<TextTitle className='font-geo-700 text-cima'>

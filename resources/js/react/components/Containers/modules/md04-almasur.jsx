@@ -14,10 +14,10 @@ const MD04_Almasur = ({ dimScreen }) => {
 
 	return (
 		<Section
-			classContainer='bg-arena_1'
+			classBackground='bg-arena_2'
 			className='pb-8 pt-0 sm:py-0'>
 			<section className='relative flex w-full flex-col items-center sm:-top-20'>
-				<div className='flex w-full max-w-[567px] justify-center bg-arena_1 py-14'>
+				<div className='flex w-full max-w-[567px] justify-center bg-arena_2 py-14'>
 					<Image
 						className='absolute -top-9 h-[71px] w-[99px]'
 						alt='Isotipo de Almasur'
