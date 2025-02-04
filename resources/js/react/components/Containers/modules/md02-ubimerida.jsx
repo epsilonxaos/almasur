@@ -7,7 +7,7 @@ import Section from '../Section'
 const MD02_UbicacionMerida = ({ isMobile }) => {
 	return (
 		<Section
-			classContainer='bg-pacifico bg-opacity-50'
+			classBackground='bg-rosa_tenue'
 			className='overflow-x-hidden px-0 py-14 sm:py-16'>
 			<section className='flex w-full flex-col items-center justify-center gap-y-16 lg:flex-row lg:flex-wrap lg:justify-between'>
 				<div className={`${isMobile ? 'px-8' : ''} grid max-w-[400px] gap-8 lg:w-1/3 lg:text-left`}>
