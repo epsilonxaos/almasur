@@ -81,43 +81,41 @@ const MD08_Cotizador = () => {
 			<Section className='relative p-0 sm:p-0'>
 				<section className='relative bottom-[100px] mb-[-50px] grid w-full gap-5 bg-arena_2 pb-8 pt-4 sm:bottom-[150px] sm:mb-[-100px] sm:max-w-[973px] md:bottom-[175px] md:mb-[-120px]'>
 					<TextTitle
-						color='ventura'
+						color='pacifico'
 						className={`font-geo-700 font-bold`}>
 						Cotizador
 					</TextTitle>
 
 					<main className='flex flex-wrap justify-center gap-x-4 gap-y-6 px-4'>
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones className={'bg-pacifico'}>
 							<Select
+								colorSelected='white'
 								options={modelos.map(modelo => ({ value: modelo.nombre, label: modelo.nombre }))}
 								value={modeloSeleccionado.nombre}
 								onChange={value => setModeloSeleccionado(modelos.find(m => m.nombre === value) || modelos[0])}
 							/>
 						</ContenedorOpciones>
-
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones>
 							<p className='font-bold'>Precio: ${modeloSeleccionado.precio.toLocaleString()}</p>
 						</ContenedorOpciones>
-
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones>
 							<Select
 								options={plazos.map(p => ({ value: p.toString(), label: `${p} meses` }))}
 								value={plazo.toString()}
 								onChange={value => setPlazo(Number(value))}
 							/>
 						</ContenedorOpciones>
-
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones>
 							<label>30% Enganche</label>
-							<p className=''>${enganche.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+							<p>${enganche.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
 						</ContenedorOpciones>
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones>
 							<label>20% Contraentrega</label>
-							<p className=''>${contraEntrega.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+							<p>${contraEntrega.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
 						</ContenedorOpciones>
-						<ContenedorOpciones className=''>
+						<ContenedorOpciones>
 							<label>Mensualidad</label>
-							<p className=''>${mensualidad.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+							<p>${mensualidad.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
 						</ContenedorOpciones>
 					</main>
 				</section>
@@ -126,14 +124,14 @@ const MD08_Cotizador = () => {
 	)
 }
 
-export const ContenedorOpciones = ({ children, className }) => (
+export const ContenedorOpciones = ({ children, className, textColor = 'pacifico' }) => (
 	<div
 		className={twMerge(
-			'relative h-[49px] min-w-[228px] max-w-[259px] border-2 border-ventura p-3 lg:w-full',
+			'relative h-[49px] min-w-[228px] max-w-[259px] border-2 border-pacifico p-3 lg:w-full',
 			className
 		)}>
 		<TextContent
-			color='ventura'
+			color={textColor}
 			className='font-geo-700 text-left'>
 			{React.Children.map(children, child => {
 				return child.type === 'label'

@@ -3,15 +3,17 @@ import { useEffect, useRef, useState } from 'react'
 import Flecha from '../../../../img/cotizador/icon_flecha_abajo.svg'
 import { Image } from './Image'
 import { TextContent } from './Text'
+import { IconFlechaAbajo } from './icons'
 
 interface SelectProps {
 	options: { value: string; label: string }[]
 	value: string
 	onChange: (value: string) => void
 	placeholder?: string
+	colorSelected?: string
 }
 
-const Select = ({ options, value, onChange, placeholder }: SelectProps) => {
+const Select = ({ options, value, onChange, placeholder, colorSelected }: SelectProps) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const selectRef = useRef<HTMLDivElement>(null)
 
@@ -40,10 +42,11 @@ const Select = ({ options, value, onChange, placeholder }: SelectProps) => {
 				className='flex cursor-pointer items-center justify-between pb-3'
 				onClick={() => setIsOpen(!isOpen)}>
 				<TextContent
-					color='ventura'
+					color={`${colorSelected ?? 'pacifico'}`}
 					className='font-geo-700 text-left'>
 					{selectedOption ? selectedOption.label : placeholder || 'Seleccionar'}
 				</TextContent>
+				<IconFlechaAbajo fill={colorSelected} className='w-[14px]'/>
 				<Image
 					src={Flecha}
 					alt='Flecha para las opciones'
