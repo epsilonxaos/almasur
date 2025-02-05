@@ -46,11 +46,9 @@ const Select = ({ options, value, onChange, placeholder, colorSelected }: Select
 					className='font-geo-700 text-left'>
 					{selectedOption ? selectedOption.label : placeholder || 'Seleccionar'}
 				</TextContent>
-				<IconFlechaAbajo fill={colorSelected} className='w-[14px]'/>
-				<Image
-					src={Flecha}
-					alt='Flecha para las opciones'
-					objectFit='contain'
+				<IconFlechaAbajo
+					fill={colorSelected}
+					className='w-[14px]'
 				/>
 			</div>
 			{isOpen && (
