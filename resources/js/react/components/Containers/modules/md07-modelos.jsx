@@ -3,7 +3,11 @@ import { twMerge } from 'tailwind-merge'
 import { useEffect, useRef, useState } from 'react'
 
 import flechaDerecha from '../../../../../img/icons/icon_flecha_derecha.svg'
-import modeloVenturaPhone from '../../../../../img/modelos_casas/Modelo_Ventura_phone.png'
+import modeloBonanza from '../../../../../img/modelos_casas/Modelo_Bonanza.png'
+import modeloCima from '../../../../../img/modelos_casas/Modelo_Cima.png'
+import modeloMagna from '../../../../../img/modelos_casas/Modelo_Magna.png'
+import modeloPacifico from '../../../../../img/modelos_casas/Modelo_Pacifico.png'
+import modeloVentura from '../../../../../img/modelos_casas/Modelo_Ventura.png'
 import { colorVariants, getColorClass } from '../../../utils/tailwindColors'
 import Button from '../../Items/Button'
 import { Image } from '../../Items/Image'
@@ -31,7 +35,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					],
 				},
 			],
-			img: modeloVenturaPhone,
+			img: modeloVentura,
 			color: 'ventura',
 		},
 		{
@@ -52,7 +56,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					],
 				},
 			],
-			img: modeloVenturaPhone,
+			img: modeloPacifico,
 			color: 'pacifico',
 		},
 		{
@@ -74,7 +78,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					],
 				},
 			],
-			img: modeloVenturaPhone,
+			img: modeloBonanza,
 			color: 'bonanza',
 		},
 		{
@@ -97,7 +101,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					'Planta alta': ['2 recámaras con área de closet.', 'Baño completo.'],
 				},
 			],
-			img: modeloVenturaPhone,
+			img: modeloMagna,
 			color: 'magna',
 		},
 		{
@@ -123,7 +127,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 					'Planta alta': ['2 recámaras con área de closet.', 'Baño completo.'],
 				},
 			],
-			img: modeloVenturaPhone,
+			img: modeloCima,
 			color: 'cima',
 		},
 	]
@@ -155,11 +159,11 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
 			<div className='w-full px-2'>
-				<TextTitle className='font-geo-300 px-8 py-10 sm:pb-4 text-cafe_tenue'>
+				<TextTitle className='font-geo-300 px-8 py-10 text-cafe_tenue sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 
-				<TextSmallContent className='hidden flex-wrap justify-center gap-4 sm:flex'>
+				<TextSmallContent className='relative hidden flex-wrap justify-center gap-4 sm:flex'>
 					{modelos.map((modelo, idx) => {
 						// const colorChosen = ` ${getColorClass('bg', modelo.color)} text-main_b`
 						return (
@@ -173,7 +177,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 						)
 					})}
 
-					<span className='flex w-full justify-center gap-6'>
+					<span className='absolute right-[5%] top-20 flex gap-6 md:top-10'>
 						<Button
 							className='min-w-fit opacity-75 hover:opacity-100'
 							onClick={prevModelo}>
