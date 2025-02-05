@@ -37,7 +37,6 @@ export default function Home() {
 	}, [])
 
 	return (
-		<div>
 			<Main_screen>
 				<Header isMobile={isMobile} />
 				<MD01_BannerInicial />
@@ -51,6 +50,5 @@ export default function Home() {
 				<MD09_ContactUs isMobile={dimsScreen.isMobile}/>
 				<Footer />
 			</Main_screen>
-		</div>
 	)
 }
