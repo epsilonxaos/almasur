@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-import Flecha from '../../../../img/cotizador/icon_flecha_abajo.svg'
-import { Image } from './Image'
 import { TextContent } from './Text'
 import { IconFlechaAbajo } from './icons'
 

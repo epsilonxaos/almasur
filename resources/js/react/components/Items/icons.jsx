@@ -43,3 +43,35 @@ export const IconFlechaAbajo = ({ className = '', fill = 'pacifico' }) => {
 		</svg>
 	)
 }
+
+export const IconCruz = ({ className = '', fill = 'pacifico' }) => {
+	return (
+		<svg
+			className={twMerge(``, className)}
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 18 18'
+			x='0px'
+			y='0px'>
+			<rect
+				x='1'
+				y='1'
+				width='16'
+				height='15.9'
+			/>
+			<g>
+				<line
+					x1='4.8'
+					y1='4.8'
+					x2='13.2'
+					y2='13.2'
+				/>
+				<line
+					x1='13.2'
+					y1='4.8'
+					x2='4.8'
+					y2='13.2'
+				/>
+			</g>
+		</svg>
+	)
+}

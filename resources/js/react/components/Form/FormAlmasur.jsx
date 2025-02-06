@@ -1,16 +1,19 @@
+import { twMerge } from 'tailwind-merge'
+
 import { colorVariants } from '../../utils/tailwindColors'
 import Button from '../Items/Button'
 import { TextContent } from '../Items/Text'
 
-const FormAlmasur = ({ className = '' }) => {
+const FormAlmasur = ({ className = '', classForm = '' }) => {
 	return (
 		<form
 			className={className}
-			action='/PENDIENTE'
-			method='post'>
+			action='/thanks' //PENDIENTE!
+			method='get' // PENDIENTE! post
+		>
 			<TextContent
 				color='ventura'
-				className='grid gap-4'>
+				className={twMerge('grid gap-4', classForm)}>
 				<InputForm name='nombre'>Nombre:</InputForm>
 				<InputForm name='apellido'>Apellido:</InputForm>
 				<InputForm
