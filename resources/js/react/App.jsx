@@ -41,18 +41,21 @@ export default function App() {
 					location={location}
 					key={location.pathname}>
 					<Route
-						path='/'
-						element={<Home />}
+						index
+						element={
+							<PageTransition>
+								<Home />
+							</PageTransition>
+						}
 					/>
 					<Route
-						path='/gracias'
+						path='/thanks'
 						element={
 							<PageTransition>
 								<Thanks />
 							</PageTransition>
 						}
 					/>
-
 					<Route
 						path='*'
 						element={<PageNotFound />}

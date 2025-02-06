@@ -19,6 +19,8 @@ use App\Http\Controllers\ComandosController;
 
 Route::get('/artisan', [ComandosController::class, 'executeComands']);
 Route::view('/', 'layouts.app')->where('path', '.*');
+Route::view("/thanks", "layouts.app" )->where('path', '.*');
+Route::view("/{any}", "layouts.app" )->where('path', '.*');
 
 Route::get('/dashboard', function () {
 	return view('dashboard');
