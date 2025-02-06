@@ -1,7 +1,9 @@
 import logoIsotipo from '../../../../../img/icons/icon_isotipo.svg'
 import BG_Thanks from '../../../../../img/imgs/Thank_You_Page.png'
+import Button from '../../Items/Button'
 import { Image } from '../../Items/Image'
 import { TextContent, TextTitle } from '../../Items/Text'
+import { IconFlechaAbajo } from '../../Items/icons'
 import Section from '../Section'
 
 const MDT01_Thanks = () => {
@@ -12,7 +14,7 @@ const MDT01_Thanks = () => {
 			classContainer='w-full'
 			className='p-0 sm:p-0'>
 			<Image
-				className='absolute left-0 top-0 -z-10 h-full w-full object-[20%] object-cover sm:object-left'
+				className='absolute left-0 top-0 -z-10 h-full w-full object-cover object-[20%] sm:object-left'
 				src={BG_Thanks}
 				alt='Casa Almasur como fondo de agradecimiento'
 			/>
@@ -32,6 +34,16 @@ const MDT01_Thanks = () => {
 						Estamos emocionados de poder ayudarte a encontrar la casa perfecta para ti y tu familia.
 					</TextContent>
 				</div>
+				<Button
+					className='absolute -bottom-12 min-w-fit self-center'
+					onClick={() => {
+						window.history.back()
+					}}>
+					<IconFlechaAbajo
+						fill={'white'}
+						className='w-[28px] rotate-90'
+					/>
+				</Button>
 			</main>
 		</Section>
 	)
