@@ -12,8 +12,8 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 			method='get' // PENDIENTE! post
 		>
 			<TextContent
-				color='ventura'
-				className={twMerge('grid gap-4', classForm)}>
+				color='pacifico'
+				className={twMerge('font-geo grid gap-4', classForm)}>
 				<InputForm name='nombre'>Nombre:</InputForm>
 				<InputForm name='apellido'>Apellido:</InputForm>
 				<InputForm
@@ -28,7 +28,7 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 					Teléfono:
 				</InputForm>
 				<Button
-					className={`${colorVariants['ventura'].background} font-geo-400 max-w-[183px]`}
+					className={`${colorVariants['ventura'].background} max-w-[183px]`}
 					type='submit'>
 					Agendar Videollamada
 				</Button>
@@ -39,7 +39,7 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 
 const InputForm = ({ name, children, type }) => (
 	<input
-		className='font-geo-400 border-2 border-ventura bg-transparent text-xs font-medium placeholder:text-ventura'
+		className='border-2 border-pacifico bg-transparent text-xs placeholder:text-pacifico'
 		placeholder={children}
 		type={`${type || 'text'}`}
 		name={name}

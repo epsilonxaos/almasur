@@ -26,9 +26,12 @@ module.exports = {
                 ventura: "#D30D5A", //#D50057
                 pacifico: "#F25497", //#F45197
                 rosa_tenue: "#F7A9CB", // Drive => monumento-bandera
-                rosa_tenue2: "#FEEEF5", //Drive => pacifico-opacity-10
+                pacifico_tenue: "#FEEEF5", //Drive => pacifico-opacity-10
             },
             fontFamily: {
+                geo: ["Geologica Roman", "sans-serif"], //300, 400, 700
+                aller: ["Aller", "sans-serif"], //400, 700
+                geomanist: ["Geomanist", "sans-serif"], //400, 700
                 ibmPlex: ["IBM Plex Mono", "sans-serif"],
                 archivoCondensed: ["Archivo Condensed", "sans-serif"],
                 archivoExpanded: ["Archivo Expanded", "sans-serif"],

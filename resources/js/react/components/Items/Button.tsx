@@ -15,7 +15,7 @@ const Button = (opt: TButtonParams) => {
 
 	return (
 		<button
-			className={twMerge('font-geo-700  min-h-[30px] min-w-[160px] border-none font-normal text-main_b', className)}
+			className={twMerge('font-geo  min-h-[30px] min-w-[160px] border-none font-normal text-main_b', className)}
 			{...{ type }}
 			{...(onClick && { onClick })}>
 			{children}

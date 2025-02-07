@@ -27,10 +27,10 @@ const MDT01_Thanks = () => {
 				/>
 				<div className='absolute -z-10 h-full w-full bg-ventura opacity-80'></div>
 				<div className='grid max-w-[379px] gap-3 text-main_b'>
-					<TextTitle className='font-geo-700 sm:text-[20px]'>
+					<TextTitle className='font-geo text-[20px] '>
 						<p>Gracias por considerar Almasur para convertirse en tu nuevo hogar. </p>
 					</TextTitle>
-					<TextContent className='font-aller-400'>
+					<TextContent className='font-aller'>
 						Estamos emocionados de poder ayudarte a encontrar la casa perfecta para ti y tu familia.
 					</TextContent>
 				</div>

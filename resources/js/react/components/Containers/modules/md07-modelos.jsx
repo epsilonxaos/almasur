@@ -159,7 +159,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
 			<div className='w-full px-2'>
-				<TextTitle className='font-geo-300 px-8 py-10 text-cafe_tenue sm:pb-4'>
+				<TextTitle className='font-geo px-8 py-10 font-normal text-cafe_tenue sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 
@@ -228,13 +228,13 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 							<section className='mx-auto flex max-w-[250px] flex-col items-start gap-4 text-left text-cafe_tenue md:w-[29%] lg:w-[24%]'>
 								<TextTitle
 									color={modelo.color}
-									className={`font-geo-700 font-bold`}>
+									className={`font-geo`}>
 									Modelo {modelo.nombre}
 									<br />
 									Desde {modelo.precio} mxn
 								</TextTitle>
-								<TextContent className='font-aller-400'>{modelo.descripcion}</TextContent>
-								<TextContent className='font-aller-400'>
+								<TextContent className='font-aller'>{modelo.descripcion}</TextContent>
+								<TextContent className='font-aller'>
 									{modelo.puntos.map((planta, idx) =>
 										Object.entries(planta).map(([key, value]) => (
 											<ul
@@ -255,7 +255,9 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 									)}
 								</TextContent>
 								<Button className={`h-[37px] w-[214px] ${colorVariants[modelo.color].background} `}>
-									¡Cotizar ahora!
+									<TextContent>
+										<strong>¡Cotizar ahora!</strong>
+									</TextContent>
 								</Button>
 							</section>
 						</div>
@@ -272,7 +274,7 @@ const ButtonCarrusel = ({ children, className, onHover, onClick, isChosen }) => 
 		<Button
 			onClick={onClick}
 			className={twMerge(
-				`${colorVariants[onHover].hover} bg-arena_3 text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
+				`${colorVariants[onHover].hover} font-geomanist bg-arena_3 text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
 				chosenClass,
 				className
 			)}>

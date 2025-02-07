@@ -1,14 +1,19 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge';
 
-import React, { useEffect, useState } from 'react'
 
-import BG_cotizador from '../../../../../img/cotizador/Cotizador.png'
-import { colorVariants } from '../../../utils/tailwindColors'
-import { Image } from '../../Items/Image'
-import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text'
-import { IconIsotipoComponent } from '../../Items/icons'
-import Select from '../../Items/select'
-import Section from '../Section'
+
+import React, { useEffect, useState } from 'react';
+
+
+
+import BG_cotizador from '../../../../../img/cotizador/Cotizador.png';
+import { colorVariants } from '../../../utils/tailwindColors';
+import { Image } from '../../Items/Image';
+import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text';
+import { IconIsotipoComponent } from '../../Items/icons';
+import Select from '../../Items/select';
+import Section from '../Section';
+
 
 const modelos = [
 	{ nombre: 'Modelo Ventura', precio: 1299000 },
@@ -56,22 +61,24 @@ const MD08_Cotizador = () => {
 
 				{/* Información */}
 				<section className='flex w-full flex-col gap-6 p-8 text-main_b'>
-					<TextTitle className='font-geo-400 place-items-center text-lg'>
+					<TextTitle className='font-geo place-items-center text-lg font-normal'>
 						<IconIsotipoComponent
 							fill={'white'}
 							className='h-[63.72px] w-[91.83px] items-center'
 						/>
 						<p>
 							Financiamiento directo con nosotros <br className='hidden sm:flex' />
-							<span className='font-geo-700 font-bold underline'>Desde $1,299,000 mxn</span>
+							<strong>
+								<u>Desde $1,299,000 mxn</u>
+							</strong>
 						</p>
 					</TextTitle>
-					<TextContent className='font-geo-400 flex flex-col justify-around gap-1 sm:flex-row'>
+					<TextContent className='font-geo flex flex-col justify-around gap-1 sm:flex-row'>
 						<p>30% enganche</p>
 						<p>50% mensualidades</p>
 						<p>20% contraentrega</p>
 					</TextContent>
-					<TextSmallContent className='font-aller-400 text-[#EDECE5B2]'>
+					<TextSmallContent className='font-aller text-[#EDECE5B2]'>
 						Información meramente informativa y sujeto a cambio de precio sin previo aviso*
 					</TextSmallContent>
 				</section>
@@ -82,7 +89,7 @@ const MD08_Cotizador = () => {
 				<section className='relative bottom-[100px] mb-[-50px] grid w-full gap-5 bg-arena_2 pb-8 pt-4 sm:bottom-[150px] sm:mb-[-100px] sm:max-w-[973px] md:bottom-[175px] md:mb-[-120px]'>
 					<TextTitle
 						color='pacifico'
-						className={`font-geo-700 font-bold`}>
+						className={`font-geo`}>
 						Cotizador
 					</TextTitle>
 
@@ -90,17 +97,34 @@ const MD08_Cotizador = () => {
 						<ContenedorOpciones className={'bg-pacifico'}>
 							<Select
 								colorSelected='white'
-								options={modelos.map(modelo => ({ value: modelo.nombre, label: modelo.nombre }))}
+								options={modelos.map(modelo => ({
+									value: modelo.nombre,
+									label: modelo.nombre,
+									chosen: (
+										<p>
+											Cotizando el{' '}
+											<strong>
+												<u>{modelo.nombre}</u>
+											</strong>
+										</p>
+									),
+								}))}
 								value={modeloSeleccionado.nombre}
 								onChange={value => setModeloSeleccionado(modelos.find(m => m.nombre === value) || modelos[0])}
 							/>
 						</ContenedorOpciones>
 						<ContenedorOpciones>
-							<p className='font-bold'>Precio: ${modeloSeleccionado.precio.toLocaleString()}</p>
+							<p>
+								<strong>Precio: </strong>${modeloSeleccionado.precio.toLocaleString()}
+							</p>
 						</ContenedorOpciones>
 						<ContenedorOpciones>
 							<Select
-								options={plazos.map(p => ({ value: p.toString(), label: `${p} meses` }))}
+								options={plazos.map(p => ({
+									value: p.toString(),
+									label: `${p} meses`,
+									chosen: <strong>{`${p} meses`}</strong>,
+								}))}
 								value={plazo.toString()}
 								onChange={value => setPlazo(Number(value))}
 							/>
@@ -132,11 +156,11 @@ export const ContenedorOpciones = ({ children, className, textColor = 'pacifico'
 		)}>
 		<TextContent
 			color={textColor}
-			className='font-geo-700 text-left'>
+			className='font-geo text-left font-bold'>
 			{React.Children.map(children, child => {
 				return child.type === 'label'
 					? React.cloneElement(child, {
-							className: twMerge(`absolute -bottom-4 left-0`, child.props.className),
+							className: twMerge(`absolute -bottom-5 left-0`, child.props.className),
 						})
 					: child
 			})}

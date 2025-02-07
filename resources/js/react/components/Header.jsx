@@ -51,7 +51,7 @@ const Content = ({ isMobile }) => {
 					(isMobile ? 'bottom-[50px] left-1/2 -translate-x-1/2 transform bg-ventura' : 'right-0 bg-cima')
 				}
 				onClick={openModal}>
-				<TextContent>¡Agendar Videollamada!</TextContent>
+				<TextContent className='font-geo font-bold'>¡Agendar Videollamada!</TextContent>
 			</Button>
 
 			{/* MODAL FORMULARIO */}
@@ -59,7 +59,7 @@ const Content = ({ isMobile }) => {
 				isOpen={isOpenModal}
 				onClose={closeModal}
 				backImage={bgHeroContentHome}>
-				<div className='grid h-full w-full gap-6 bg-rosa_tenue2 p-4 sm:p-6 sm:pb-10'>
+				<div className='grid h-full w-full gap-6 bg-pacifico_tenue p-4 sm:p-6 sm:pb-10'>
 					<Image
 						className='m-auto max-w-[165px] md:max-w-[215px]'
 						alt='Logotipo de Almasur'

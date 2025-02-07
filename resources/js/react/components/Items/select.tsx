@@ -4,7 +4,7 @@ import { TextContent } from './Text'
 import { IconFlechaAbajo } from './icons'
 
 interface SelectProps {
-	options: { value: string; label: string }[]
+	options: { value: string; label:string; chosen: React.ReactNode }[]
 	value: string
 	onChange: (value: string) => void
 	placeholder?: string
@@ -41,8 +41,8 @@ const Select = ({ options, value, onChange, placeholder, colorSelected }: Select
 				onClick={() => setIsOpen(!isOpen)}>
 				<TextContent
 					color={`${colorSelected ?? 'pacifico'}`}
-					className='font-geo-700 text-left'>
-					{selectedOption ? selectedOption.label : placeholder || 'Seleccionar'}
+					className='font-geo text-left'>
+					{selectedOption ? selectedOption.chosen : placeholder || 'Seleccionar'}
 				</TextContent>
 				<IconFlechaAbajo
 					fill={colorSelected}

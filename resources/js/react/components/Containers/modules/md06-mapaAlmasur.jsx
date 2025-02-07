@@ -18,10 +18,10 @@ const MD06_MapaAlmasur = () => {
 			className='relative gap-10 md:gap-0 md:px-0 md:pt-0 lg:px-0'>
 			{/* INFORMATIVO */}
 			<article className='left-8 grid max-w-80 gap-5 sm:text-left md:absolute md:top-20 lg:top-32 xl:top-48'>
-				<TextTitle className='font-geo-700 text-cima'>
+				<TextTitle className='font-geo font-normal text-cima'>
 					¡<span className='font-bold'>Almasur</span> será el centro de tu vida!
 				</TextTitle>
-				<TextContent className='font-aller-400 grid gap-5 text-cafe_tenue'>
+				<TextContent className='font-aller grid gap-5 text-cafe_tenue'>
 					<p>
 						Tu vida está siempre en movimiento, por eso lo que necesitas es un lugar donde los tuyos vivan felices y{' '}
 						<span className='font-bold'> con todos los servicios al alcance de la mano. </span>

@@ -10,7 +10,7 @@ import Section from '../Section'
 const MD09_ContactUs = ({ isMobile }) => {
 	return (
 		<Section
-			classBackground='bg-rosa_tenue2'
+			classBackground='bg-pacifico_tenue'
 			classContainer='lg:mt-32'
 			className='flex flex-col items-center justify-around gap-y-8 pt-8 sm:flex-wrap sm:px-[14px] sm:pb-0 md:flex-row'>
 			<div className='flex max-w-[300px] flex-col items-center gap-4 md:max-w-[210px]'>
@@ -21,7 +21,7 @@ const MD09_ContactUs = ({ isMobile }) => {
 				/>
 				<TextContent
 					color='ventura'
-					className='font-aller-400 grid gap-2 md:text-left'>
+					className='font-aller grid gap-2 md:text-left'>
 					{isMobile ? (
 						<p>Calle 50A x 61 y 61 - A Fraccionamiento del sur.</p>
 					) : (
@@ -37,9 +37,7 @@ const MD09_ContactUs = ({ isMobile }) => {
 			</div>
 			<FormAlmasur className="w-full max-w-[300px]"/>
 			<Image
-				// className='w-full min-w-[466px] max-w-[616px]'
-				// className='w-full min-w-[466px] max-w-[470px] lg:max-w-[616px]'
-				className='relative w-full min-w-[466px] max-w-[466px] lg:-top-32 lg:right-0'
+				className='relative w-full max-w-[466px] xl:max-w-[616px] lg:-top-32 lg:right-0'
 				src={BG_contact}
 			/>
 		</Section>

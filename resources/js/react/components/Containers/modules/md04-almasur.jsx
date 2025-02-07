@@ -1,13 +1,14 @@
-import logoIsotipo from '../../../../../img/icons/icon_isotipo.svg';
-import imgsCasas from '../../../../../img/imgs/casas.png';
-import imgsCasas_1 from '../../../../../img/imgs/casas_1.png';
-import imgsCasas_2 from '../../../../../img/imgs/casas_2.png';
-import imgsCasas_3 from '../../../../../img/imgs/casas_3.png';
-import Button from '../../Items/Button';
-import { Image } from '../../Items/Image';
-import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text';
-import Section from '../Section';
+import { twMerge } from 'tailwind-merge'
 
+import logoIsotipo from '../../../../../img/icons/icon_isotipo.svg'
+import imgsCasas from '../../../../../img/imgs/casas.png'
+import imgsCasas_1 from '../../../../../img/imgs/casas_1.png'
+import imgsCasas_2 from '../../../../../img/imgs/casas_2.png'
+import imgsCasas_3 from '../../../../../img/imgs/casas_3.png'
+import Button from '../../Items/Button'
+import { Image } from '../../Items/Image'
+import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text'
+import Section from '../Section'
 
 const MD04_Almasur = ({ dimScreen }) => {
 	const { isMobile, isTablet, isDesktop } = dimScreen
@@ -24,16 +25,16 @@ const MD04_Almasur = ({ dimScreen }) => {
 						src={logoIsotipo}
 					/>
 					<div className='grid max-w-[305px] gap-2'>
-						<TextTitle className={`font-geo-300`}>
+						<TextTitle className={`font-geo font-light`}>
 							<p>
-								<span className='font-geo-700 font-bold text-ventura'>Almasur </span>
+								<span className='font-bold text-pacifico'>Almasur </span>
 								te ofrece viviendas con un diseño moderno y diferente
 							</p>
 						</TextTitle>
-						<Button className={'h-[30px] w-full bg-ventura'}>
+						<Button className={'pointer-events-none h-[30px] w-full bg-pacifico'}>
 							<TextContent>Precios desde $1,299,000 mxn</TextContent>
 						</Button>
-						<TextSmallContent>*Precios sujetos a cambios sin previo aviso.</TextSmallContent>
+						<TextSmallContent className='font-aller'>*Precios sujetos a cambios sin previo aviso.</TextSmallContent>
 					</div>
 				</div>
 
@@ -46,22 +47,22 @@ const MD04_Almasur = ({ dimScreen }) => {
 						objectFit='contain'
 					/>
 
-					<TextContent className='flex text-cafe_tenue w-full max-w-[580px] flex-col items-center gap-4'>
-						<p className='font-geo-400 w-full max-w-[471px] px-6 sm:px-0'>
+					<TextContent className='flex w-full max-w-[580px] flex-col items-center gap-4 text-cafe_tenue'>
+						<p className='font-geo max-w-[471px] px-6 sm:px-0'>
 							Todas las casas vienen con preparación para instalación de aire acondicionado en las habitaciones y el
 							área de comedor. También incluimos:
 						</p>
-						<article className='font-Geomanist-400 flex w-full flex-wrap justify-between'>
-							<ul className='border-cafe_tenue mx-auto w-full max-w-[291px] border-t-[1px] sm:mx-0 sm:max-w-[259px] sm:border-y-[1px]'>
+						<article className='font-geomanist flex w-full flex-wrap justify-between'>
+							<ContenedorElementoExtra className='border-t-[0.25px]'>
 								<ElementosExtra>Rotoplas 600 lts.</ElementosExtra>
 								<ElementosExtra>Cocinas con granito en las mesetas*</ElementosExtra>
 								<ElementosExtra>Accesorios de baños.</ElementosExtra>
-							</ul>
-							<ul className='border-cafe_tenue mx-auto w-full max-w-[291px] border-b-[1px] sm:mx-0 sm:max-w-[259px] sm:border-y-[1px]'>
+							</ContenedorElementoExtra>
+							<ContenedorElementoExtra className='border-b-[0.25px]'>
 								<ElementosExtra>Bomba y cisterna*</ElementosExtra>
 								<ElementosExtra>Llaves mezcladoras de baño y cocina.</ElementosExtra>
 								<ElementosExtra>Acabados de pasta lisa en interiores.</ElementosExtra>
-							</ul>
+							</ContenedorElementoExtra>
 						</article>
 					</TextContent>
 				</section>
@@ -70,7 +71,17 @@ const MD04_Almasur = ({ dimScreen }) => {
 	)
 }
 
+const ContenedorElementoExtra = ({ children, className }) => (
+	<ul
+		className={twMerge(
+			`mx-auto w-full max-w-[291px] border-cafe_tenue sm:mx-0 sm:max-w-[259px] sm:border-y-[0.25px]`,
+			className
+		)}>
+		{children}
+	</ul>
+)
+
 const ElementosExtra = ({ children }) => {
-	return <li className='border-cafe_tenue border-y-[1px] py-2'>{children}</li>
+	return <li className='border-y-[0.125px] border-cafe_tenue py-2'>{children}</li>
 }
 export default MD04_Almasur

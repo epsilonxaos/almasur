@@ -14,12 +14,12 @@ const MD01_BannerInicial = () => {
 				alt='Isotipo de Almasur'
 				width={103}
 			/>
-			<TextTitle className='font-geo text-main_b'>
+			<TextTitle className='font-geo font-light text-main_b'>
 				<p>¡Tu corazón pertenece al Sur!</p>
 				<p>
 					Conoce nuestro desarrollo <span className='font-bold'>Almasur</span>, creado a tu medida.
 				</p>
-				<p className='font-geo-700 font-bold'>Precios desde 1,299,000 mxn</p>
+				<p className='font-bold'>Precios desde 1,299,000 mxn</p>
 			</TextTitle>
 		</Section>
 	)
