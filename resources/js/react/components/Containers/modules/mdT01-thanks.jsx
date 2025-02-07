@@ -9,16 +9,15 @@ import Section from '../Section'
 const MDT01_Thanks = () => {
 	return (
 		<Section
-			notFullWidth
 			classBackground='relative flex justify-center items-center flex-grow'
-			classContainer='w-full'
+			classContainer='w-full px-6 sm:px-0 '
 			className='p-0 sm:p-0'>
 			<Image
 				className='absolute left-0 top-0 -z-10 h-full w-full object-cover object-[20%] sm:object-left'
 				src={BG_Thanks}
 				alt='Casa Almasur como fondo de agradecimiento'
 			/>
-			<main className='relative grid min-h-[217px] w-full max-w-[833px] place-items-center p-10'>
+			<main className='relative grid min-h-[217px] w-full max-w-[833px] place-items-center p-4 py-10 sm:w-[70%]'>
 				<Image
 					className='absolute -top-12 sm:-top-14'
 					src={logoIsotipo}
@@ -27,7 +26,7 @@ const MDT01_Thanks = () => {
 				/>
 				<div className='absolute -z-10 h-full w-full bg-ventura opacity-80'></div>
 				<div className='grid max-w-[379px] gap-3 text-main_b'>
-					<TextTitle className='font-geo text-[20px] '>
+					<TextTitle className='font-geo text-[20px]'>
 						<p>Gracias por considerar Almasur para convertirse en tu nuevo hogar. </p>
 					</TextTitle>
 					<TextContent className='font-aller'>
