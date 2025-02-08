@@ -75,3 +75,25 @@ export const IconCruz = ({ className = '', fill = 'pacifico' }) => {
 		</svg>
 	)
 }
+
+export const FlechaPlay = () => {
+	return (
+		<svg
+			// width='13'
+			// height='12'
+			viewBox='0 0 13 12'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'>
+			<circle
+				cx='6.49994'
+				cy='6.00018'
+				r='5.80243'
+				fill='#D9D9D9'
+			/>
+			<path
+				d='M5.18115 8.90143L5.18115 3.099L8.87361 6.26396L5.18115 8.90143Z'
+				fill='#B8BE14'
+			/>
+		</svg>
+	)
+}

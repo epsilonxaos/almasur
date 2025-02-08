@@ -46,6 +46,7 @@ const MD06_MapaAlmasur = () => {
 				videoSrc={VideoALMASUR}
 				fallbackImageSrc={SalaAdentro}
 				classContainer='flex min-h-[250px] w-4/5 max-w-[1058px]'
+				className='' //Tamaño pantalla de video, no se definió. Preguntar
 			/>
 		</Section>
 	)

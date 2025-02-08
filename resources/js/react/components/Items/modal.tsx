@@ -1,3 +1,5 @@
+import { twMerge } from 'tailwind-merge'
+
 import type React from 'react'
 
 import Button from './Button'
@@ -8,9 +10,11 @@ interface ModalProps {
 	onClose: () => void
 	children: React.ReactNode
 	backImage?: string
+	className?: string
+	classContenedor?: string
 }
 
-const Modal = ({ isOpen, onClose, children, backImage }: ModalProps) => {
+const Modal = ({ isOpen, onClose, children, backImage, className, classContenedor }: ModalProps) => {
 	if (!isOpen) return null
 
 	return (
@@ -23,10 +27,14 @@ const Modal = ({ isOpen, onClose, children, backImage }: ModalProps) => {
 			{/* Contenedor del formulario con img de fondo */}
 			<div className='relative z-10 grid h-full max-h-[700px] w-full max-w-[716px]'>
 				<div
-					className='bg-cover bg-center shadow-xl'
+					className={twMerge('bg-cover bg-center shadow-xl', classContenedor)}
 					style={{ backgroundImage: `url(${backImage})` }}>
 					{/* Contenedor para el CONTENIDO EXISTENTE */}
-					<div className='absolute left-1/2 top-1/2 w-10/12 max-w-[462px] max-h-[492px] -translate-x-1/2 -translate-y-1/2 sm:w-3/5'>
+					<div
+						className={twMerge(
+							'absolute left-1/2 top-1/2 max-h-[492px] w-10/12 max-w-[462px] -translate-x-1/2 -translate-y-1/2 sm:w-3/5',
+							className
+						)}>
 						{children}
 					</div>
 				</div>
