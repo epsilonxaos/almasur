@@ -67,7 +67,6 @@ const Content = ({ isMobile }) => {
 					/>
 					<FormAlmasur
 						className='m-auto w-full max-w-[335px]'
-						classForm='gap-3'
 					/>
 				</div>
 			</Modal>
