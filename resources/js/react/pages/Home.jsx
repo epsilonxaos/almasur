@@ -37,18 +37,18 @@ export default function Home() {
 	}, [])
 
 	return (
-			<Main_screen>
-				<Header isMobile={isMobile} />
-				<MD01_BannerInicial />
-				<MD02_UbicacionMerida isMobile={isMobile} />
-				<MD03_SoloImagen />
-				<MD04_Almasur dimScreen={dimsScreen} />
-				<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
-				<MD06_MapaAlmasur />
-				<MD07_ModelosCasa isMobile={dimsScreen.isMobile} />
-				<MD08_Cotizador />
-				<MD09_ContactUs isMobile={dimsScreen.isMobile}/>
-				<Footer />
-			</Main_screen>
+		<Main_screen>
+			<Header isMobile={isMobile} />
+			<MD01_BannerInicial />
+			<MD02_UbicacionMerida isMobile={isMobile} />
+			<MD03_SoloImagen />
+			<MD04_Almasur dimScreen={dimsScreen} />
+			<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
+			<MD06_MapaAlmasur />
+			<MD07_ModelosCasa isMobile={dimsScreen.isMobile} />
+			{/* <MD08_Cotizador /> */}
+			<MD09_ContactUs isMobile={dimsScreen.isMobile} />
+			<Footer />
+		</Main_screen>
 	)
 }

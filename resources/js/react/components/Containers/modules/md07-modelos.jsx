@@ -159,7 +159,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
 			<div className='w-full px-2'>
-				<TextTitle className='font-geo px-8 py-10 font-normal text-cafe_tenue sm:pb-4'>
+				<TextTitle className='px-8 py-10 font-geo font-normal text-cafe_tenue sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 
@@ -212,7 +212,9 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 							className='flex min-h-fit w-full flex-wrap items-center justify-center gap-y-4 sm:flex-shrink-0 sm:justify-between'
 							style={{ scrollSnapAlign: 'start' }}>
 							{/* Contenedor imagen e isotipo */}
-							<div className='relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'>
+							<div
+								className='relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'
+								style={{ background: 'red', color: 'white' }}>
 								<Image
 									alt={`Modelo de casa '${modelo.nombre}' Almasur`}
 									src={modelo.img}
@@ -274,7 +276,7 @@ const ButtonCarrusel = ({ children, className, onHover, onClick, isChosen }) => 
 		<Button
 			onClick={onClick}
 			className={twMerge(
-				`${colorVariants[onHover].hover} font-geomanist bg-arena_3 text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
+				`${colorVariants[onHover].hover} bg-arena_3 font-geomanist text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
 				chosenClass,
 				className
 			)}>

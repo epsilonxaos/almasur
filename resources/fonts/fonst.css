@@ -1,65 +1,69 @@
 @font-face {
-    font-family: 'Geologica Roman';
-    src: url('geo/GeologicaRoman-Light.woff2') format('woff2'),
-        url('geo/GeologicaRoman-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Geologica Roman';
+	src:
+		url('./geo/GeologicaRoman-Light.woff2') format('woff2'),
+		url('./geo/GeologicaRoman-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Geologica Roman';
-    src: url('geo/GeologicaRoman-Regular.woff2') format('woff2'),
-        url('geo/GeologicaRoman-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Geologica Roman';
+	src:
+		url('./geo/GeologicaRoman-Regular.woff2') format('woff2'),
+		url('./geo/GeologicaRoman-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Geologica Roman';
-    src: url('geo/GeologicaRoman-SemiBold.woff2') format('woff2'),
-        url('geo/GeologicaRoman-SemiBold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Geologica Roman';
+	src:
+		url('./geo/GeologicaRoman-SemiBold.woff2') format('woff2'),
+		url('./geo/GeologicaRoman-SemiBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Aller';
-    src: url('aller/Aller.woff2') format('woff2'),
-        url('aller/Aller.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Aller';
+	src:
+		url('./aller/Aller.woff2') format('woff2'),
+		url('./aller/Aller.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Aller';
-    src: url('aller/Aller-Bold.woff2') format('woff2'),
-        url('aller/Aller-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Aller';
+	src:
+		url('./aller/Aller-Bold.woff2') format('woff2'),
+		url('./aller/Aller-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Geomanist';
-    src: url('geomanist/Geomanist-Regular.woff2') format('woff2'),
-        url('geomanist/Geomanist-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Geomanist';
+	src:
+		url('./geomanist/Geomanist-Regular.woff2') format('woff2'),
+		url('./geomanist/Geomanist-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Geomanist';
-    src: url('geomanist/Geomanist-Bold.woff2') format('woff2'),
-        url('geomanist/Geomanist-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Geomanist';
+	src:
+		url('./geomanist/Geomanist-Bold.woff2') format('woff2'),
+		url('./geomanist/Geomanist-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
-
-
-

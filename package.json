@@ -6,6 +6,7 @@
 		"framer-motion": "^10.16.0",
 		"html-react-parser": "^4.2.1",
 		"react-hook-form": "^7.51.4",
+		"react-hot-toast": "^2.5.2",
 		"react-icons": "^5.2.1",
 		"react-lazy-load-image-component": "^1.6.0",
 		"react-router-dom": "^6.15.0",
@@ -49,6 +50,7 @@
 	"private": true,
 	"scripts": {
 		"build": "vite build",
+		"build:staging": "vite build --mode=staging",
 		"dev": "vite",
 		"docs": "jsdoc -c jsdoc.conf.json",
 		"format": "prettier --loglevel warn --write \"./**/*.{ts,tsx,json,js,jsx}\""

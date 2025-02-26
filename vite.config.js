@@ -10,6 +10,10 @@ export default defineConfig(({ mode }) => {
 	const host = env.SERVER_HOST
 	const isProduction = mode === 'production'
 
+	console.log(`Mode: ${mode}`)
+	console.log(`isProduction: ${isProduction}`)
+	console.log(`Server Host: ${host}`)
+
 	return {
 		server: isProduction
 			? false
@@ -21,6 +25,7 @@ export default defineConfig(({ mode }) => {
 						key: readFileSync(env.SERVER_HTTPS_KEY),
 						cert: readFileSync(env.SERVER_HTTPS_CERT),
 					},
+					cors: true,
 				},
 
 		plugins: [

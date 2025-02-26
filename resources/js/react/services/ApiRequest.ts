@@ -1,6 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 import toast from 'react-hot-toast'
+
 import { _PATH_API } from '../constants/constants'
 
 type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
@@ -71,7 +72,7 @@ class ApiRequest {
 	private controller?: any
 	private base: string = _PATH_API!
 	private defaultHeaders = {
-		token: "",
+		token: '',
 	}
 	private defaultShowToast = {
 		loading: 'Cargando...',
