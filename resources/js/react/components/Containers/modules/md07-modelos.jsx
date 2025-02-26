@@ -156,14 +156,14 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 	return (
 		<Section
 			classContainer=''
-			className='flex-wrap justify-stretch px-0 sm:flex-row sm:gap-5 sm:px-0'>
+			className='flex-wrap justify-stretch px-0 sm:flex-row sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
-			<div className='w-full px-2'>
+			<div className='relative w-full px-2'>
 				<TextTitle className='px-8 py-10 font-geo font-normal text-cafe_tenue sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 
-				<TextSmallContent className='relative hidden flex-wrap justify-center gap-4 sm:flex'>
+				<TextSmallContent className='hidden flex-wrap justify-center gap-4 sm:flex'>
 					{modelos.map((modelo, idx) => {
 						// const colorChosen = ` ${getColorClass('bg', modelo.color)} text-main_b`
 						return (
@@ -177,7 +177,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 						)
 					})}
 
-					<span className='absolute right-[5%] top-20 flex gap-6 md:top-10'>
+					<span className='absolute -bottom-10 right-[2%] z-40 flex gap-6 xl:-bottom-[80px]'>
 						<Button
 							className='min-w-fit opacity-75 hover:opacity-100'
 							onClick={prevModelo}>
