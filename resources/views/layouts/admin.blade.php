@@ -61,10 +61,7 @@
 
     <script src="{{ asset('plugins/jquery/jquery-3.7.0.min.js') }}"></script>
     <script src="{{ asset('plugins/dropify/js/dropify.min.js') }}"></script>
-    @vite([
-		'resources/js/panel/index.js'
-		'resources/js/panel/trumbowygInit.js'
-	])
+    @vite(['resources/js/panel/index.js', 'resources/js/panel/trumbowygInit.js'])
     @stack('script')
 </body>
 

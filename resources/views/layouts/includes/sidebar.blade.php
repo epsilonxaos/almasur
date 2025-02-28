@@ -55,6 +55,29 @@
                         </a>
                     </li>
                 @endcan
+                @can(PermissionKey::Role['permissions']['index']['name'])
+                    <li>
+                        <a href="{{ route('panel.website.index') }}"
+                            class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group {{ request()->is('admin/roles*') ? 'bg-gray-100' : '' }}">
+
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                                  width="24" height="24" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor"
+                                  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                      fill="currentColor"
+                                      d="M11 14H5v5H3v-6.97l5-3.57l5 3.57v1.08c.57-.59 1.25-1.07 2-1.42V11L8 6l-7 5v10h6v-5h2v5h2.68c-.43-.91-.68-1.92-.68-3zm6-7h2v2h-2z"
+                                    ></path>
+                                    <path
+                                      fill="currentColor"
+                                      d="M23 13.11V3H10v1.97l2 1.43V5h9v6.68c.75.36 1.43.84 2 1.43M23 18c0-2.76-2.24-5-5-5s-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5m-5.5 3v-2.5H15v-1h2.5V15h1v2.5H21v1h-2.5V21z"
+                                    ></path>
+                                  </svg>
+
+                            <span class="ml-4">Modelos</span>
+                        </a>
+                    </li>
+                @endcan
             </ul>
         @endcanany
     </div>
