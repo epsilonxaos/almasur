@@ -3,11 +3,6 @@ import { twMerge } from 'tailwind-merge'
 import { useEffect, useRef, useState } from 'react'
 
 import flechaDerecha from '../../../../../img/icons/icon_flecha_derecha.svg'
-import modeloBonanza from '../../../../../img/modelos_casas/Modelo_Bonanza.png'
-import modeloCima from '../../../../../img/modelos_casas/Modelo_Cima.png'
-import modeloMagna from '../../../../../img/modelos_casas/Modelo_Magna.png'
-import modeloPacifico from '../../../../../img/modelos_casas/Modelo_Pacifico.png'
-import modeloVentura from '../../../../../img/modelos_casas/Modelo_Ventura.png'
 import { colorVariants, getColorClass } from '../../../utils/tailwindColors'
 import Button from '../../Items/Button'
 import { Image } from '../../Items/Image'
@@ -15,123 +10,7 @@ import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text'
 import { IconIsotipoComponent } from '../../Items/icons'
 import Section from '../Section'
 
-const MD07_ModelosCasa = ({ isMobile }) => {
-	const modelos = [
-		{
-			nombre: 'Ventura',
-			precio: '$1,299,000',
-			descripcion: 'Una casa donde la comodidad y la calidez se unen para crear un hogar ideal para ti y tu familia.',
-			puntos: [
-				{
-					'Planta baja': [
-						'Terreno de 160 m2.',
-						'Construcción de 71 m2.',
-						'Cocina.',
-						'Sala y comedor corridos.',
-						'2 recámaras con área de closet.',
-						'Área para tomar el fresco.',
-						'Baño completo.',
-						'Con preparación para un segundo nivel.',
-					],
-				},
-			],
-			img: modeloVentura,
-			color: 'ventura',
-		},
-		{
-			nombre: 'Pacífico',
-			precio: '$1,435,000',
-			descripcion: 'Un refugio de paz y tranquilidad para ti y tus seres queridos.',
-			puntos: [
-				{
-					'Planta baja': [
-						'Terreno de 160 m2',
-						'Construcción de 77 m2',
-						'Cocina.',
-						'Sala y comedor corridos.',
-						'2 recámaras con área de closet.',
-						'Área para tomar el fresco.',
-						'2 baños completos.',
-						'Con preparación para un segundo nivel.',
-					],
-				},
-			],
-			img: modeloPacifico,
-			color: 'pacifico',
-		},
-		{
-			nombre: 'Bonanza',
-			precio: '$1,694,000',
-			descripcion: 'Diseñamos este modelo para que vivas momentos inolvidables con tus seres queridos.',
-			puntos: [
-				{
-					'Planta baja': [
-						'Terreno desde 180 m2',
-						'Construcción de 97 m2',
-						'Cocina.',
-						'Sala y comedor corridos.',
-						'Área para tomar el fresco.',
-						'Medio baño.',
-						'Planta alta',
-						'2 recámaras con área de closet.',
-						'Baño completo.',
-					],
-				},
-			],
-			img: modeloBonanza,
-			color: 'bonanza',
-		},
-		{
-			nombre: 'Magna',
-			precio: '$2,066,453',
-			descripcion: 'Una casa creada pensando en todo lo necesario para la comodidad de tu familia.',
-			puntos: [
-				{
-					'Planta baja': [
-						'Terrenos desde 200 m2',
-						'Construcción de 108 m2',
-						'Cocina.',
-						'Recámara con área de closet y baño completo.',
-						'Sala y comedor corridos.',
-						'Área para tomar el fresco.',
-						'Medio baño.',
-					],
-				},
-				{
-					'Planta alta': ['2 recámaras con área de closet.', 'Baño completo.'],
-				},
-			],
-			img: modeloMagna,
-			color: 'magna',
-		},
-		{
-			nombre: 'Cima',
-			precio: '$1,965,000',
-			descripcion: 'Una casa equipada con todo lo que buscas.',
-			puntos: [
-				{
-					'Planta baja': [
-						'Terreno desde 160 m2',
-						'Construcción de 117 m2',
-						'Sala y comedor corridos.',
-						'Cocina.',
-						'1 recámara con área de closet.',
-						'Baño completo.',
-						'Cubo de luz.',
-						'Área de servicio.',
-						'Área para tomar el fresco.',
-						'Estacionamiento para 2 vehículos.',
-					],
-				},
-				{
-					'Planta alta': ['2 recámaras con área de closet.', 'Baño completo.'],
-				},
-			],
-			img: modeloCima,
-			color: 'cima',
-		},
-	]
-
+const MD07_ModelosCasa = ({ isMobile, modelos }) => {
 	const carruselRef = useRef(null)
 	const [currIdx, setCurrIdx] = useState(0)
 	const prevModelo = () => {
@@ -156,10 +35,10 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 	return (
 		<Section
 			classContainer=''
-			className='flex-wrap justify-stretch px-0 sm:flex-row  sm:px-0'>
+			className='flex-wrap justify-stretch px-0 sm:flex-row sm:px-0'>
 			{/* Contenedor para controles del carrusel */}
 			<div className='relative w-full px-2'>
-				<TextTitle className='font-geo px-8 py-10 font-normal text-cafe_tenue sm:pb-4'>
+				<TextTitle className='px-8 py-10 font-geo font-normal text-cafe_tenue sm:pb-4'>
 					Contamos con <strong>5 modelos</strong> pensados para cada familia
 				</TextTitle>
 
@@ -172,12 +51,12 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 								key={idx}
 								onHover={modelo.color}
 								onClick={() => chosenModelo(idx)}>
-								{modelo.nombre.toUpperCase()}
+								{modelo.modelo.toUpperCase()}
 							</ButtonCarrusel>
 						)
 					})}
 
-					<span className='absolute right-[2%] z-40 xl:-bottom-[80px] -bottom-10 flex gap-6 '>
+					<span className='absolute -bottom-10 right-[2%] z-40 flex gap-6 xl:-bottom-[80px]'>
 						<Button
 							className='min-w-fit opacity-75 hover:opacity-100'
 							onClick={prevModelo}>
@@ -231,7 +110,7 @@ const MD07_ModelosCasa = ({ isMobile }) => {
 									className={`font-geo`}>
 									Modelo {modelo.nombre}
 									<br />
-									Desde {modelo.precio} mxn
+									Desde ${parseInt(modelo.precio).toLocaleString()} mxn
 								</TextTitle>
 								<TextContent className='font-aller'>{modelo.descripcion}</TextContent>
 								<TextContent className='font-aller'>
@@ -274,7 +153,7 @@ const ButtonCarrusel = ({ children, className, onHover, onClick, isChosen }) => 
 		<Button
 			onClick={onClick}
 			className={twMerge(
-				`${colorVariants[onHover].hover} font-geomanist bg-arena_3 text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
+				`${colorVariants[onHover].hover} bg-arena_3 font-geomanist text-cafe_tenue transition-all duration-[350ms] ease-in-out hover:text-main_b`,
 				chosenClass,
 				className
 			)}>

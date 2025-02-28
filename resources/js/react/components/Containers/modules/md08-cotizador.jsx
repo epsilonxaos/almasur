@@ -1,30 +1,19 @@
 import { twMerge } from 'tailwind-merge';
 
+import React, { useEffect, useState } from 'react'
 
-
-import React, { useEffect, useState } from 'react';
-
-
-
-import BG_cotizador from '../../../../../img/cotizador/Cotizador.png';
-import { colorVariants } from '../../../utils/tailwindColors';
-import { Image } from '../../Items/Image';
-import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text';
-import { IconIsotipoComponent } from '../../Items/icons';
-import Select from '../../Items/select';
-import Section from '../Section';
-
-
-const modelos = [
-	{ nombre: 'Modelo Ventura', precio: 1299000 },
-	{ nombre: 'Modelo Pacífico', precio: 1435000 },
-	{ nombre: 'Modelo Bonanza', precio: 1694000 },
-]
+import BG_cotizador from '../../../../../img/cotizador/Cotizador.png'
+import { colorVariants } from '../../../utils/tailwindColors'
+import { Image } from '../../Items/Image'
+import { TextContent, TextSmallContent, TextTitle } from '../../Items/Text'
+import { IconIsotipoComponent } from '../../Items/icons'
+import Select from '../../Items/select'
+import Section from '../Section'
 
 // Opciones de plazo
 const plazos = [12, 24, 36, 48, 60]
 
-const MD08_Cotizador = () => {
+const MD08_Cotizador = ({ modelos }) => {
 	const [modeloSeleccionado, setModeloSeleccionado] = useState(modelos[0])
 	const [plazo, setPlazo] = useState(plazos[0])
 	const [enganche, setEnganche] = useState(0)
@@ -61,7 +50,7 @@ const MD08_Cotizador = () => {
 
 				{/* Información */}
 				<section className='flex w-full flex-col gap-6 p-8 text-main_b'>
-					<TextTitle className='font-geo place-items-center text-lg font-normal'>
+					<TextTitle className='place-items-center font-geo text-lg font-normal'>
 						<IconIsotipoComponent
 							fill={'white'}
 							className='h-[63.72px] w-[91.83px] items-center'
@@ -73,7 +62,7 @@ const MD08_Cotizador = () => {
 							</strong>
 						</p>
 					</TextTitle>
-					<TextContent className='font-geo flex flex-col justify-around gap-1 sm:flex-row'>
+					<TextContent className='flex flex-col justify-around gap-1 font-geo sm:flex-row'>
 						<p>30% enganche</p>
 						<p>50% mensualidades</p>
 						<p>20% contraentrega</p>
@@ -98,19 +87,19 @@ const MD08_Cotizador = () => {
 							<Select
 								colorSelected='white'
 								options={modelos.map(modelo => ({
-									value: modelo.nombre,
-									label: modelo.nombre,
+									value: modelo.modelo,
+									label: modelo.modelo,
 									chosen: (
 										<p>
 											Cotizando el{' '}
 											<strong>
-												<u>{modelo.nombre}</u>
+												<u>Modelo {modelo.modelo}</u>
 											</strong>
 										</p>
 									),
 								}))}
-								value={modeloSeleccionado.nombre}
-								onChange={value => setModeloSeleccionado(modelos.find(m => m.nombre === value) || modelos[0])}
+								value={modeloSeleccionado.modelo}
+								onChange={value => setModeloSeleccionado(modelos.find(m => m.modelo === value) || modelos[0])}
 							/>
 						</ContenedorOpciones>
 						<ContenedorOpciones>
