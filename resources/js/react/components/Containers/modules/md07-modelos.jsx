@@ -91,7 +91,9 @@ const MD07_ModelosCasa = ({ isMobile, modelos }) => {
 							className='flex min-h-fit w-full flex-wrap items-center justify-center gap-y-4 sm:flex-shrink-0 sm:justify-between'
 							style={{ scrollSnapAlign: 'start' }}>
 							{/* Contenedor imagen e isotipo */}
-							<div className='relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'>
+							<div
+								className='relative mx-auto sm:mt-5 sm:w-3/5 md:mx-0 md:w-[66%] lg:mt-11 lg:w-[70%]'
+								style={{ background: 'red', color: 'white' }}>
 								<Image
 									alt={`Modelo de casa '${modelo.nombre}' Almasur`}
 									src={modelo.img}

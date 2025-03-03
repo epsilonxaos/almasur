@@ -2,7 +2,9 @@ import { twMerge } from 'tailwind-merge'
 
 import { useState } from 'react'
 import { type SubmitHandler, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
+import ApiRequest, { type ApiRequestOptions } from '../../services/ApiRequest'
 import { colorVariants } from '../../utils/tailwindColors'
 import Button from '../Items/Button'
 import { TextContent, TextTitle } from '../Items/Text'
@@ -15,46 +17,40 @@ type TFormAlmasur = {
 	telefono: string
 }
 
+const api = new ApiRequest()
+
 const FormAlmasur = ({ className = '', classForm = '' }) => {
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [submitStatus, setSubmitStatus] = useState<'espera' | 'enviado' | 'error'>('espera')
 	const {
 		register,
+		reset,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<TFormAlmasur>()
 
-	const onSubmit: SubmitHandler<TFormAlmasur> = async data => {
-		setIsSubmitting(true)
-		setSubmitStatus('espera')
-		console.log(data)
+	const navigate = useNavigate()
 
-		try {
-			const response = await fetch('https://PENDIENTE.com', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			})
+	const onSubmit = data => {
+		data.website = 'LandingAlmasur'
 
-			if (!response.ok) {
-				throw new Error('Error al enviar el formulario')
-			}
-
-			setSubmitStatus('enviado')
-		} catch (error) {
-			console.error('[ERROR FORM]:', error)
-			setSubmitStatus('error')
-		} finally {
-			setIsSubmitting(false)
-			setTimeout(() => {
-				setSubmitStatus('espera')
-				if (submitStatus === 'enviado') {
-					window.location.href = '/thanks'
-				}
-			}, 3000)
+		const opt: ApiRequestOptions = {
+			url: 'api/enviar-webhook',
+			method: 'POST',
+			data,
+			showToast: {
+				success: 'Datos enviados correctamente',
+				error: 'Error en la solicitud',
+			},
+			headers: {
+				'Content-Type': 'application/json',
+			},
 		}
+
+		api.fetchData(opt).then(() => {
+			reset()
+			navigate('/thanks')
+		})
 	}
 
 	return (
@@ -63,7 +59,7 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 			onSubmit={handleSubmit(onSubmit)}>
 			<TextContent
 				color='pacifico'
-				className={twMerge('font-geo grid gap-4', classForm)}>
+				className={twMerge('grid gap-4 font-geo', classForm)}>
 				<InputForm
 					name={'nombre'}
 					refRegister={{ ...register('nombre', { required: 'Nombre requerido' }) }}
@@ -113,7 +109,7 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 				</Button>
 			</TextContent>
 
-			<TextTitle className='font-geo text-left sm:text-sm'>
+			<TextTitle className='text-left font-geo sm:text-sm'>
 				{submitStatus === 'enviado' && <p className='text-lime-600'>Formulario enviado con éxito! Redirigiendo...</p>}
 				{submitStatus === 'error' && (
 					<p className='text-red-500'>

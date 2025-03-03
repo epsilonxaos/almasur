@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 
 import { useEffect, useReducer } from 'react'
+import { Toaster } from 'react-hot-toast'
 import { Route, Routes, useLocation } from 'react-router-dom'
 
 import Footer from './components/Footer'
@@ -34,6 +35,7 @@ export default function App() {
 	return (
 		<>
 			{/* <Header /> */}
+			<Toaster />
 			<AnimatePresence mode='wait'>
 				<ScrollToTop />
 

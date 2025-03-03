@@ -13,12 +13,11 @@ import MD09_ContactUs from '../components/Containers/modules/md09-contactUs'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-
-import modeloBonanza from '../../../img/modelos_casas/Modelo_Bonanza.png';
-import modeloCima from '../../../img/modelos_casas/Modelo_Cima.png';
-import modeloMagna from '../../../img/modelos_casas/Modelo_Magna.png';
-import modeloPacifico from '../../../img/modelos_casas/Modelo_Pacifico.png';
-import modeloVentura from '../../../img/modelos_casas/Modelo_Ventura.png';
+import modeloBonanza from '../../../img/modelos_casas/Modelo_Bonanza.png'
+import modeloCima from '../../../img/modelos_casas/Modelo_Cima.png'
+import modeloMagna from '../../../img/modelos_casas/Modelo_Magna.png'
+import modeloPacifico from '../../../img/modelos_casas/Modelo_Pacifico.png'
+import modeloVentura from '../../../img/modelos_casas/Modelo_Ventura.png'
 
 export default function Home() {
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
@@ -48,7 +47,6 @@ export default function Home() {
 				},
 			],
 			img: modeloVentura,
-			
 			color: 'ventura',
 		},
 		{
@@ -161,18 +159,21 @@ export default function Home() {
 	}, [])
 
 	return (
-			<Main_screen>
-				<Header isMobile={isMobile} />
-				<MD01_BannerInicial />
-				<MD02_UbicacionMerida isMobile={isMobile} />
-				<MD03_SoloImagen />
-				<MD04_Almasur dimScreen={dimsScreen} />
-				<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
-				<MD06_MapaAlmasur />
-				<MD07_ModelosCasa modelos={modelos} isMobile={dimsScreen.isMobile} />
-				<MD08_Cotizador modelos={modelos} />
-				<MD09_ContactUs isMobile={dimsScreen.isMobile}/>
-				<Footer />
-			</Main_screen>
+		<Main_screen>
+			<Header isMobile={isMobile} />
+			<MD01_BannerInicial />
+			<MD02_UbicacionMerida isMobile={isMobile} />
+			<MD03_SoloImagen />
+			<MD04_Almasur dimScreen={dimsScreen} />
+			<MD05_SoloImagenSillones isMobile={dimsScreen.isMobile} />
+			<MD06_MapaAlmasur />
+			<MD07_ModelosCasa
+				modelos={modelos}
+				isMobile={dimsScreen.isMobile}
+			/>
+			{/* <MD08_Cotizador modelos={modelos} /> */}
+			<MD09_ContactUs isMobile={dimsScreen.isMobile} />
+			<Footer />
+		</Main_screen>
 	)
 }

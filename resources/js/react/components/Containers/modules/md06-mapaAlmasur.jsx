@@ -1,5 +1,5 @@
 import SalaAdentro from '../../../../../img/imgs/banner2-2.png'
-import VideoALMASUR from '../../../../../img/mapa/ALMASUR.mp4'
+import VideoALMASUR from '../../../../../img/mapa/almasur.mp4'
 import colegios from '../../../../../img/mapa/icons/colegios.svg'
 import comercios from '../../../../../img/mapa/icons/comercios.svg'
 import hospitales from '../../../../../img/mapa/icons/hospitales.svg'
@@ -21,7 +21,7 @@ const MD06_MapaAlmasur = () => {
 				<TextTitle className='font-geo font-normal text-cima'>
 					¡<span className='font-bold'>Almasur</span> será el centro de tu vida!
 				</TextTitle>
-				<TextContent className='font-aller grid gap-5 text-cafe_tenue'>
+				<TextContent className='grid gap-5 font-aller text-cafe_tenue'>
 					<p>
 						Tu vida está siempre en movimiento, por eso lo que necesitas es un lugar donde los tuyos vivan felices y{' '}
 						<span className='font-bold'> con todos los servicios al alcance de la mano. </span>
