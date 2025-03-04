@@ -57,7 +57,7 @@
                 @endcan
                 @can(PermissionKey::Role['permissions']['index']['name'])
                     <li>
-                        <a href="{{ route('panel.website.index') }}"
+                        <a href="{{ route('panel.modelos.index') }}"
                             class="flex items-center p-2 text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group {{ request()->is('admin/roles*') ? 'bg-gray-100' : '' }}">
 
                                   <svg xmlns="http://www.w3.org/2000/svg"

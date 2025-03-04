@@ -105,7 +105,10 @@ const FormAlmasur = ({ className = '', classForm = '' }) => {
 					disabled={isSubmitting}
 					className={`${colorVariants['ventura'].background} max-w-[183px]`}
 					type='submit'>
+					<TextContent className='font-mono'>
 					{isSubmitting ? 'Enviando...' : 'Agendar Videollamada'}
+
+					</TextContent>
 				</Button>
 			</TextContent>
 
@@ -126,7 +129,7 @@ const InputForm = ({ name, required = false, children, type = 'text', className 
 
 	return (
 		<>
-			<div className='relative'>
+			<div className='relative font-geo'>
 				<input
 					id={name}
 					// aria-invalid={error ? 'true' : 'false'}

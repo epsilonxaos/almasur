@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComandosController;
+use App\Http\Controllers\ModelosCasasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\ComandosController;
 Route::get('/artisan', [ComandosController::class, 'executeComands']);
 Route::view('/', 'layouts.app')->where('path', '.*');
 Route::view("/thanks", "layouts.app" )->where('path', '.*');
-Route::view("/{any}", "layouts.app" )->where('path', '.*');
+// Route::view("/{any}", "layouts.app" )->where('path', '.*');
 
 Route::get('/dashboard', function () {
 	return view('dashboard');
@@ -39,6 +40,7 @@ Route::middleware('guest')->prefix('/admin')->group(function () {
 });
 
 Route::middleware(['auth:admin', 'verified'])->prefix('/admin')->group(function () {
+// Route::prefix('/admin')->group(function () {
 	Route::post('/logout', [AdminController::class, 'logout'])->name('panel.logout');
 	Route::get('/dashboard', [AdminController::class, 'dashboardAdmin'])->name('panel.dashboard');
 
@@ -67,6 +69,16 @@ Route::middleware(['auth:admin', 'verified'])->prefix('/admin')->group(function 
 		Route::patch('/update/{id?}', [AdminController::class, 'updateProfile'])->name('panel.usuarios.update');
 		Route::put('/update/{id?}/password', [AdminController::class, 'updateProfilePassword'])->name('panel.usuarios.update.password');
 		Route::delete('/destroy/{id?}', [AdminController::class, 'destroyProfile'])->name('panel.usuarios.destroy');
+	});
+
+	// MODELOS
+	Route::prefix("/modelos")->group(function () {
+		Route::get('/', [ModelosCasasController::class, 'index'])->name('panel.modelos.index');
+		Route::get('/nuevo', [ModelosCasasController::class, 'create'])->name('panel.modelos.create');
+		Route::post('/store', [ModelosCasasController::class, 'store'])->name('panel.modelos.store');
+		Route::get('/editar/{id}', [ModelosCasasController::class, 'edit'])->name('panel.modelos.edit');
+		Route::put('/update/{id}', [ModelosCasasController::class, 'update'])->name('panel.modelos.update');
+		Route::delete('/destroy/{id}', [ModelosCasasController::class, 'destroy'])->name('panel.modelos.destroy');
 	});
 });
 

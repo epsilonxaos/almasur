@@ -45,7 +45,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($casas as $item)
+            @foreach ($modelos as $item)
                 <tr
                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-600">
 
