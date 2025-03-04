@@ -11,15 +11,15 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::create('modelos_casas', function (Blueprint $table) {
+		Schema::create('modelo_casas', function (Blueprint $table) {
 			$table->id();
-			$table->string('nombre');
+			$table->string('modelo');
+			$table->integer('precio');
 			$table->text('descripcion')->nullable();
 			$table->longText('contenido');
 			$table->string('imagen');
-			$table->string('precio');
 			$table->string('color');
-			$table->tinyInteger('status')->default(1);
+			$table->enum('status', [1,0])->default(1);
 
 			$table->timestamps();
 		});

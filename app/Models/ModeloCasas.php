@@ -14,10 +14,10 @@ class ModeloCasas extends Model
         'modelo',
         'precio',
         'descripcion',
-        'espacios',
+        'contenido',
         'imagen',
         'color',
-        'estado'
+        'status'
     ];
 
 }

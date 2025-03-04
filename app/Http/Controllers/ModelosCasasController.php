@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ModelosCasas;
+use App\Models\ModeloCasas;
 use Illuminate\Http\Request;
 
 class ModelosCasasController extends Controller
@@ -12,7 +12,7 @@ class ModelosCasasController extends Controller
 	 */
 	public function index()
 	{
-		$modelos = ModelosCasas::all();
+		$modelos = ModeloCasas::all();
 		return view('panel.modelos.index', compact('modelos'));
 	}
 
@@ -30,11 +30,11 @@ class ModelosCasasController extends Controller
 	public function store(Request $request)
 	{
 		$validated = $request->validate([
-			'nombre' => 'required|unique:modelos_casas,nombre',
+			'modelo' => 'required|unique:modelo_casas,modelo',
 			'descripcion' => 'required',
 		]);
 
-		ModelosCasas::create($validated);
+		ModeloCasas::create($validated);
 
 		return redirect()->route('modelos.index');
 	}
@@ -45,18 +45,18 @@ class ModelosCasasController extends Controller
 	 */
 	public function edit(Int $id)
 	{
-		$modelo = ModelosCasas::find($id);
+		$modelo = ModeloCasas::find($id);
 		return view('panel.modelos.edit', compact('modelo'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 */
-	public function update(Request $request, ModelosCasas $modelosCasas)
+	public function update(Request $request, ModeloCasas $modeloCasas)
 	{
-		$modelo = ModelosCasas::find($request->id);
+		$modelo = ModeloCasas::find($request->id);
 
-		$modelo->nombre = $request->nombre;
+		$modelo->modelo = $request->modelo;
 		$modelo->descripcion = $request->descripcion;
 		$modelo->save();
 
@@ -68,7 +68,7 @@ class ModelosCasasController extends Controller
 	 */
 	public function destroy(Int $id)
 	{
-		ModelosCasas::destroy($id);
+		ModeloCasas::destroy($id);
 
 		return redirect()->route('modelos.index');
 	}

@@ -14,19 +14,19 @@ class CasasSeeder extends Seeder {
             "modelo" => "Ventura",
             "precio" => 1299000,
             "descripcion" => "Una casa donde la comodidad y la calidez se unen para crear un hogar ideal para ti y tu familia.",
-            "espacios" => "3 recamaras, 2 baños, sala, comedor, cocina",
+            "contenido" => "3 recamaras, 2 baños, sala, comedor, cocina",
             "imagen" => "../../../img/modelos_casas/Modelo_Ventura.png",
             "color" => "ventura",
-            "estado" => 1
+            "status" => 1
         ]);
         ModeloCasas::create([
             "modelo" => "Pacífico",
             "precio" => 1435000,
             "descripcion" => "Un refugio de paz y tranquilidad para ti y tus seres queridos.",
-            "espacios" => "3 recamaras, 2 baños, sala, comedor, cocina",
+            "contenido" => "3 recamaras, 2 baños, sala, comedor, cocina",
             "imagen" => "../../../img/modelos_casas/Modelo_Pacifico.png",
             "color" => "pacifico",
-            "estado" => 1
+            "status" => 1
         ]);
     }
 }
