@@ -76,8 +76,8 @@ Route::middleware(['auth:admin', 'verified'])->prefix('/admin')->group(function 
 		Route::get('/', [ModelosCasasController::class, 'index'])->name('panel.modelos.index');
 		Route::get('/nuevo', [ModelosCasasController::class, 'create'])->name('panel.modelos.create');
 		Route::post('/store', [ModelosCasasController::class, 'store'])->name('panel.modelos.store');
-		Route::get('/editar/{id}', [ModelosCasasController::class, 'edit'])->name('panel.modelos.edit');
-		Route::put('/update/{id}', [ModelosCasasController::class, 'update'])->name('panel.modelos.update');
+		Route::get('/edit/{id?}', [ModelosCasasController::class, 'edit'])->name('panel.modelos.edit');
+		Route::put('/update', [ModelosCasasController::class, 'update'])->name('panel.modelos.update');
 		Route::delete('/destroy/{id}', [ModelosCasasController::class, 'destroy'])->name('panel.modelos.destroy');
 	});
 });

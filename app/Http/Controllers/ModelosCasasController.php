@@ -31,12 +31,18 @@ class ModelosCasasController extends Controller
 	{
 		$validated = $request->validate([
 			'modelo' => 'required|unique:modelo_casas,modelo',
-			'descripcion' => 'required',
+			"descripcion" => "string",
+			"precio" => "required|integer",
+			"contenido"=> "required|string",
+			"imagen"=> "required|string",
+			"color"=> "required|string",
+			"status"=> "required|boolean",
+			
 		]);
 
 		ModeloCasas::create($validated);
 
-		return redirect()->route('modelos.index');
+		return redirect()->route('panel.modelos.index');
 	}
 
 
@@ -52,15 +58,21 @@ class ModelosCasasController extends Controller
 	/**
 	 * Update the specified resource in storage.
 	 */
-	public function update(Request $request, ModeloCasas $modeloCasas)
+	public function update(Request $request)
 	{
 		$modelo = ModeloCasas::find($request->id);
 
 		$modelo->modelo = $request->modelo;
+		$modelo->precio = $request->precio;
 		$modelo->descripcion = $request->descripcion;
+		$modelo->contenido = $request->contenido;
+		$modelo->imagen = $request->imagen;
+		$modelo->color = $request->color;
+		$modelo->status = $request->status;
+
 		$modelo->save();
 
-		return redirect()->route('modelos.index');
+		return redirect()->route('panel.modelos.index');
 	}
 
 	/**
@@ -70,6 +82,6 @@ class ModelosCasasController extends Controller
 	{
 		ModeloCasas::destroy($id);
 
-		return redirect()->route('modelos.index');
+		return redirect()->route('panel.modelos.index');
 	}
 }
